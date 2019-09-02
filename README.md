@@ -1,0 +1,2 @@
+# NotenRechner
+Durchschnittsrechner für Schulnoten
