@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Dialog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +33,8 @@ public class MainActivity extends Activity {
         final EditText in_Percentage = (EditText)findViewById(R.id.editText);
         final Button btn2 = (Button)findViewById(R.id.btn2);
         final TextView final_note = (TextView)findViewById((R.id.textView6));
+        in_Percentage.setText("");
+        in_Note.setText("");
 
         in_Note.setInputType(InputType.TYPE_CLASS_NUMBER);
         in_Percentage.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -46,29 +49,39 @@ public class MainActivity extends Activity {
         // DataBind ListView with items from ArrayAdapter
         lv.setAdapter(arrayAdapter);
 
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String newNote = in_Note.getText().toString();
                 String newPercentage = in_Percentage.getText().toString();
-                if(newPercentage == ""){
+                if (newPercentage.matches("")){
                     newPercentage = "100";
                 }
-                String newNotePercentage = newNote + "," + newPercentage;
-                // Add new Items to List
-                note_list.add(newNotePercentage);
+                if (newNote.matches("")){
+                    in_Note.setText("");
+                    in_Percentage.setText("");
+                    in_Note.setFocusableInTouchMode(true);
+                    in_Note.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Invalid Input", Toast.LENGTH_LONG).show();
+                }else {
+                    String newNotePercentage = newNote + "," + newPercentage;
+                    // Add new Items to List
+                    note_list.add(newNotePercentage);
                 /*
                     notifyDataSetChanged ()
                         Notifies the attached observers that the underlying
                         data has been changed and any View reflecting the
                         data set should refresh itself.
                  */
-                arrayAdapter.notifyDataSetChanged();
-                in_Note.setText("");
-                in_Percentage.setText("");
+                    arrayAdapter.notifyDataSetChanged();
+                    in_Note.setText("");
+                    in_Percentage.setText("");
 
-                in_Note.setFocusableInTouchMode(true);
-                in_Note.requestFocus();
+                    in_Note.setFocusableInTouchMode(true);
+                    in_Note.requestFocus();
+                }
+
 
             }
         });
@@ -110,11 +123,4 @@ public class MainActivity extends Activity {
 
     }
 
-    public static Integer tryParse(String text) {
-        try {
-            return Integer.parseInt(text);
-        } catch (NumberFormatException e) {
-            return null;
-        }
-    }
 }
