@@ -34,4 +34,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Open an Issue at (https://github.com/kaffarell/NotenRechner/issues).
+Open an Issue at [Github Issues](https://github.com/kaffarell/NotenRechner/issues).
