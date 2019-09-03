@@ -1,6 +1,6 @@
 ## NotenRechner App
 
-# [Download](https://github.com/kaffarell/NotenRechner/releases/)
+# [Download](https://github.com/kaffarell/NotenRechner/releases/latest)
 ## Click on Download apk-debug.apk
 
 
