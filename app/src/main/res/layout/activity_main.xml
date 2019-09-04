@@ -10,10 +10,10 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="94dp"
+        android:layout_width="110dp"
         android:layout_height="51dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="782dp"
         android:text="löschen"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,10 +127,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="51dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
         android:layout_marginTop="782dp"
         android:text="Speichern"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,13 +138,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="94dp"
+        android:layout_width="110dp"
         android:layout_height="51dp"
         android:layout_marginStart="285dp"
         android:layout_marginLeft="285dp"
         android:layout_marginTop="782dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:text="Laden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
