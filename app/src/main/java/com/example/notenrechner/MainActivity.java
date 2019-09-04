@@ -1,9 +1,12 @@
 package com.example.notenrechner;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.InputType;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,15 +14,24 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Dialog;
+import android.graphics.Color;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import javax.microedition.khronos.egl.EGLDisplay;
+
 
 public class MainActivity extends Activity {
+
+    private String m_Text = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +45,17 @@ public class MainActivity extends Activity {
         final EditText in_Percentage = (EditText)findViewById(R.id.editText);
         final Button btn2 = (Button)findViewById(R.id.btn2);
         final TextView final_note = (TextView)findViewById((R.id.textView6));
+        final Button button = (Button)findViewById(R.id.button);
+        final Button removeFile = (Button)findViewById(R.id.button5);
+
+        final Button loadButton = (Button)findViewById(R.id.button2);
         in_Percentage.setText("");
         in_Note.setText("");
 
+        //set move file button and input when keyboard is out
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+        //set number keyboard
         in_Note.setInputType(InputType.TYPE_CLASS_NUMBER);
         in_Percentage.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -58,7 +78,7 @@ public class MainActivity extends Activity {
                 if (newPercentage.matches("")){
                     newPercentage = "100";
                 }
-                if (newNote.matches("")){
+                if (newNote.matches("") || Double.parseDouble(newNote) < 3 || Double.parseDouble(newNote) > 10 || Double.parseDouble(newPercentage) > 100 || Double.parseDouble(newPercentage) <= 0){
                     in_Note.setText("");
                     in_Percentage.setText("");
                     in_Note.setFocusableInTouchMode(true);
@@ -80,8 +100,51 @@ public class MainActivity extends Activity {
 
                     in_Note.setFocusableInTouchMode(true);
                     in_Note.requestFocus();
+                    final_note.setText("");
                 }
 
+
+            }
+        });
+
+        removeFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final_note.setText("");
+                final List<String> fileList= new ArrayList<String>();
+                String path = getApplicationContext().getFilesDir().toString();
+                File directory = new File(path);
+                File[] files = directory.listFiles();
+                for (int i = 0; i < files.length; i++)
+                {
+                    fileList.add(files[i].getName());
+                }
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Ein Fach auswählen");
+
+                // add a list
+                final String[] item = fileList.toArray(new String[fileList.size()]);
+                builder.setItems(item, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        note_list.clear();
+                        arrayAdapter.notifyDataSetChanged();
+                        File dir = getFilesDir();
+                        File file = new File(getApplicationContext().getFilesDir(), item[which]);
+                        boolean deleted = file.delete();
+                        if (deleted == true){
+                            Toast.makeText(getApplicationContext(), "Fach gelöscht", Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+
+
+                // create and show the alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
 
             }
         });
@@ -112,12 +175,132 @@ public class MainActivity extends Activity {
                     percentageSum += newPercentage;
                 }
                 double finalNote = noteSum/percentageSum;
-                final_note.setText(Double.toString(finalNote));
-                if (finalNote > 6){
+                double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+                final_note.setText(Double.toString(finalNoteRound));
+                if (finalNoteRound >= 6){
                     Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
-                }else if (finalNote < 6){
+                    final_note.setTextColor(Color.parseColor("#00FF00"));
+                }else if (finalNoteRound < 6){
                     Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
+                    final_note.setTextColor(Color.parseColor("#FF0000"));
                 }
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final_note.setText("");
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Title");
+
+                // Set up the input
+                final EditText input = new EditText(MainActivity.this);
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                input.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        String filename = m_Text.toString();
+                        File file = new File(getApplicationContext().getFilesDir(), filename + ".txt");
+                        FileOutputStream fos = null;
+                        try {
+                            fos = new FileOutputStream(file);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+
+                        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+
+                        for (int i = 0; i < note_list.size(); i++) {
+                            try {
+                                bw.write(note_list.get(i).toString());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                bw.newLine();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        try {
+                            bw.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+
+
+            }
+        });
+
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final_note.setText("");
+                final List<String> fileList= new ArrayList<String>();
+                String path = getApplicationContext().getFilesDir().toString();
+                File directory = new File(path);
+                File[] files = directory.listFiles();
+                for (int i = 0; i < files.length; i++)
+                {
+                    fileList.add(files[i].getName());
+                }
+
+                // setup the alert builder
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Ein Fach auswählen");
+
+                // add a list
+                final String[] item = fileList.toArray(new String[fileList.size()]);
+                builder.setItems(item, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Get the text file
+                        File file = new File(getApplicationContext().getFilesDir(), item[which]);
+                        //Read text from file
+                        note_list.clear();
+                        arrayAdapter.notifyDataSetChanged();
+
+
+                        try {
+                            BufferedReader br = new BufferedReader(new FileReader(file));
+                            String line;
+
+                            while ((line = br.readLine()) != null) {
+                                note_list.add(line);
+                            }
+                            br.close();
+                        }
+                        catch (IOException e) {
+                            //You'll need to add proper error handling here
+                        }
+
+                    }
+                });
+
+
+                // create and show the alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
             }
         });
 
