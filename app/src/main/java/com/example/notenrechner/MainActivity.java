@@ -1,9 +1,18 @@
 package com.example.notenrechner;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,7 +23,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.graphics.Color;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -52,6 +63,11 @@ public class MainActivity extends Activity {
         in_Percentage.setText("");
         in_Note.setText("");
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            negNotification();
+        }
+
+
         //set move file button and input when keyboard is out
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
@@ -73,6 +89,7 @@ public class MainActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String newNote = in_Note.getText().toString();
                 String newPercentage = in_Percentage.getText().toString();
                 if (newPercentage.matches("")){
@@ -304,6 +321,91 @@ public class MainActivity extends Activity {
             }
         });
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void negNotification(){
+        //read all files to see if someone is neg. and send push notific.
+        final List<String> fileList= new ArrayList<>();
+        final List<String> markList = new ArrayList<>();
+        final List<String> negSub = new ArrayList<>();
+        String path = getApplicationContext().getFilesDir().toString();
+        File directory = new File(path);
+        File[] files = directory.listFiles();
+        for (int i = 0; i < files.length; i++)
+        {
+            fileList.add(files[i].getName());
+        }
+
+        for (int i = 0; i < fileList.size(); i++){
+            markList.clear();
+            //Get the text file
+            File file = new File(getApplicationContext().getFilesDir(), fileList.get(i));
+            //Read text from file
+
+
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                String line;
+
+                while ((line = br.readLine()) != null) {
+                    markList.add(line);
+                }
+                br.close();
+            }
+            catch (IOException e) {
+                //You'll need to add proper error handling here
+            }
+            double noteSum = 0;
+            double percentageSum = 0;
+            for (int a = 0; a < markList.size(); a++){
+                String str = markList.get(a);
+                String[] str1 = str.split(",", 2);
+                int newNote;
+                int newPercentage;
+                newNote= Integer.parseInt(str1[0]);
+                newPercentage= Integer.parseInt((str1[1]));
+
+                noteSum = noteSum + (newNote * newPercentage);
+                percentageSum += newPercentage;
+            }
+            double finalNote = noteSum/percentageSum;
+            double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+            if (finalNote < 6){
+                String str = fileList.get(i).substring(0, fileList.get(i).indexOf("."));
+                negSub.add(str);
+            }
+
+        }
+
+
+        for (int b = 0; b < negSub.size(); b++){
+            showNotification("NotenRechner", "Du bist negativ in: " + negSub.get(b), String.valueOf(b), String.valueOf(b+1));
+        }
+
+
+
+    }
+    void showNotification(String title, String message, String channelid, String channelname) {
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelid,
+                    channelname,
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Send notification when negative");
+            mNotificationManager.createNotificationChannel(channel);
+        }
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "negId")
+                .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                .setContentTitle(title) // title for notification
+                .setContentText(message)// message for notification
+                .setAutoCancel(true); //   clear notification after click
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        mBuilder.setContentIntent(pi);
+        //not actually the channelid, only using the same number to save resources
+        mNotificationManager.notify(Integer.parseInt(channelid), mBuilder.build());
     }
 
 }
