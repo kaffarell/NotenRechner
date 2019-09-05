@@ -38,6 +38,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.media.CamcorderProfile.get;
 
 
 public class MainActivity extends Activity {
@@ -67,13 +68,14 @@ public class MainActivity extends Activity {
             negNotification();
         }
 
-
-        //set move file button and input when keyboard is out
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
+        //TODO: set comma for 6/7 as 6.5
         //set number keyboard
         in_Note.setInputType(InputType.TYPE_CLASS_NUMBER);
         in_Percentage.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        //TODO: move buttons up, this is not working
+        //set move file button and input when keyboard is out
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         // Create a List from String Array elements
         final List<String> note_list = new ArrayList<String>();
@@ -183,9 +185,9 @@ public class MainActivity extends Activity {
                 for (int i = 0; i < note_list.size(); i++){
                     String str = note_list.get(i);
                     String[] str1 = str.split(",", 2);
-                    int newNote;
+                    double newNote;
                     int newPercentage;
-                    newNote= Integer.parseInt(str1[0]);
+                    newNote= Double.parseDouble(str1[0]);
                     newPercentage= Integer.parseInt((str1[1]));
 
                     noteSum = noteSum + (newNote * newPercentage);
@@ -361,9 +363,9 @@ public class MainActivity extends Activity {
             for (int a = 0; a < markList.size(); a++){
                 String str = markList.get(a);
                 String[] str1 = str.split(",", 2);
-                int newNote;
+                double newNote;
                 int newPercentage;
-                newNote= Integer.parseInt(str1[0]);
+                newNote= Double.parseDouble(str1[0]);
                 newPercentage= Integer.parseInt((str1[1]));
 
                 noteSum = noteSum + (newNote * newPercentage);
