@@ -679,7 +679,6 @@ id beginning
 id blocking
 id bottom
 id btn
-id btn2
 id button
 id button2
 id button5

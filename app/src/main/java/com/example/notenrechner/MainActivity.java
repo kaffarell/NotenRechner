@@ -55,7 +55,6 @@ public class MainActivity extends Activity {
         final Button btn = (Button) findViewById(R.id.btn);
         final EditText in_Note = (EditText)findViewById(R.id.editText2);
         final EditText in_Percentage = (EditText)findViewById(R.id.editText);
-        final Button btn2 = (Button)findViewById(R.id.btn2);
         final TextView final_note = (TextView)findViewById((R.id.textView6));
         final Button button = (Button)findViewById(R.id.button);
         final Button removeFile = (Button)findViewById(R.id.button5);
@@ -120,6 +119,33 @@ public class MainActivity extends Activity {
                     in_Note.setFocusableInTouchMode(true);
                     in_Note.requestFocus();
                     final_note.setText("");
+
+                    if (!(note_list.isEmpty())){
+                        double noteSum = 0;
+                        double percentageSum = 0;
+                        for (int i = 0; i < note_list.size(); i++){
+                            String str = note_list.get(i);
+                            String[] str1 = str.split(",", 2);
+                            double newNote1;
+                            int newPercentage1;
+                            newNote1 = Double.parseDouble(str1[0]);
+                            newPercentage1 = Integer.parseInt((str1[1]));
+
+                            noteSum = noteSum + (newNote1 * newPercentage1);
+                            percentageSum += newPercentage1;
+                        }
+                        double finalNote = noteSum/percentageSum;
+                        double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+                        final_note.setText(Double.toString(finalNoteRound));
+                        if (finalNoteRound >= 6){
+                            Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
+                            final_note.setTextColor(Color.parseColor("#00FF00"));
+                        }else if (finalNoteRound < 6){
+                            Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
+                            final_note.setTextColor(Color.parseColor("#FF0000"));
+                        }
+
+                    }
                 }
 
 
@@ -173,37 +199,36 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 note_list.remove(i); // remove item at index in list datasource
                 arrayAdapter.notifyDataSetChanged(); // call it for refresh ListView
-            }
+                if (!(note_list.isEmpty())) {
+                    double noteSum = 0;
+                    double percentageSum = 0;
+                    for (int a = 0; a < note_list.size(); a++) {
+                        String str = note_list.get(a);
+                        String[] str1 = str.split(",", 2);
+                        double newNote1;
+                        int newPercentage1;
+                        newNote1 = Double.parseDouble(str1[0]);
+                        newPercentage1 = Integer.parseInt((str1[1]));
 
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                double noteSum = 0;
-                double percentageSum = 0;
-                for (int i = 0; i < note_list.size(); i++){
-                    String str = note_list.get(i);
-                    String[] str1 = str.split(",", 2);
-                    double newNote;
-                    int newPercentage;
-                    newNote= Double.parseDouble(str1[0]);
-                    newPercentage= Integer.parseInt((str1[1]));
-
-                    noteSum = noteSum + (newNote * newPercentage);
-                    percentageSum += newPercentage;
+                        noteSum = noteSum + (newNote1 * newPercentage1);
+                        percentageSum += newPercentage1;
+                    }
+                    double finalNote = noteSum / percentageSum;
+                    double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+                    final_note.setText(Double.toString(finalNoteRound));
+                    if (finalNoteRound >= 6) {
+                        Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
+                        final_note.setTextColor(Color.parseColor("#00FF00"));
+                    } else if (finalNoteRound < 6) {
+                        Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
+                        final_note.setTextColor(Color.parseColor("#FF0000"));
+                    }
                 }
-                double finalNote = noteSum/percentageSum;
-                double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
-                final_note.setText(Double.toString(finalNoteRound));
-                if (finalNoteRound >= 6){
-                    Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
-                    final_note.setTextColor(Color.parseColor("#00FF00"));
-                }else if (finalNoteRound < 6){
-                    Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
-                    final_note.setTextColor(Color.parseColor("#FF0000"));
+                if (note_list.isEmpty()){
+                    final_note.setText("");
                 }
             }
+
         });
 
         button.setOnClickListener(new View.OnClickListener() {
