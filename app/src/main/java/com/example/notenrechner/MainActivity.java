@@ -380,18 +380,18 @@ public class MainActivity extends Activity {
 
 
         for (int b = 0; b < negSub.size(); b++){
-            showNotification("NotenRechner", "Du bist negativ in: " + negSub.get(b), String.valueOf(b), String.valueOf(b+1));
+            showNotification("NotenRechner", "Du bist negativ in: " + negSub.get(b), String.valueOf(b));
         }
 
 
 
     }
-    void showNotification(String title, String message, String channelid, String channelname) {
+    void showNotification(String title, String message, String index) {
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelid,
-                    channelname,
+            NotificationChannel channel = new NotificationChannel("negId",
+                    "negName",
                     NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription("Send notification when negative");
             mNotificationManager.createNotificationChannel(channel);
@@ -404,8 +404,7 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(pi);
-        //not actually the channelid, only using the same number to save resources
-        mNotificationManager.notify(Integer.parseInt(channelid), mBuilder.build());
+        mNotificationManager.notify(Integer.parseInt(index), mBuilder.build());
     }
 
 }
