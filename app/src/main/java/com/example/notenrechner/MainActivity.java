@@ -2,14 +2,12 @@ package com.example.notenrechner;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,8 +36,6 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
-
 
 public class MainActivity extends Activity {
 
@@ -50,18 +46,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // Get reference of widgets from XML layout
         final ListView lv = (ListView) findViewById(R.id.lv);
-        final Button btn = (Button) findViewById(R.id.btn);
-        final EditText in_Note = (EditText)findViewById(R.id.editText2);
-        final EditText in_Percentage = (EditText)findViewById(R.id.editText);
-        final TextView final_note = (TextView)findViewById((R.id.textView6));
-        final Button button = (Button)findViewById(R.id.button);
-        final Button removeFile = (Button)findViewById(R.id.button5);
+        final Button addMarkButton = (Button) findViewById(R.id.btn);
+        final EditText inputNote = (EditText)findViewById(R.id.editText2);
+        final EditText inputPercentage = (EditText)findViewById(R.id.editText);
+        final TextView finalNoteView = (TextView)findViewById((R.id.textView6));
+        final Button saveFileButton = (Button)findViewById(R.id.button);
+        final Button removeFileButton = (Button)findViewById(R.id.button5);
 
         final Button loadButton = (Button)findViewById(R.id.button2);
-        in_Percentage.setText("");
-        in_Note.setText("");
+        inputPercentage.setText("");
+        inputNote.setText("");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             negNotification();
@@ -69,8 +66,8 @@ public class MainActivity extends Activity {
 
         //TODO: set comma for 6/7 as 6.5
         //set number keyboard
-        in_Note.setInputType(InputType.TYPE_CLASS_NUMBER);
-        in_Percentage.setInputType(InputType.TYPE_CLASS_NUMBER);
+        inputNote.setInputType(InputType.TYPE_CLASS_NUMBER);
+        inputPercentage.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         //TODO: move buttons up, this is not working
         //set move file button and input when keyboard is out
@@ -87,20 +84,20 @@ public class MainActivity extends Activity {
         lv.setAdapter(arrayAdapter);
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        addMarkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String newNote = in_Note.getText().toString();
-                String newPercentage = in_Percentage.getText().toString();
+                String newNote = inputNote.getText().toString();
+                String newPercentage = inputPercentage.getText().toString();
                 if (newPercentage.matches("")){
                     newPercentage = "100";
                 }
                 if (newNote.matches("") || Double.parseDouble(newNote) < 3 || Double.parseDouble(newNote) > 10 || Double.parseDouble(newPercentage) > 100 || Double.parseDouble(newPercentage) <= 0){
-                    in_Note.setText("");
-                    in_Percentage.setText("");
-                    in_Note.setFocusableInTouchMode(true);
-                    in_Note.requestFocus();
+                    inputNote.setText("");
+                    inputPercentage.setText("");
+                    inputNote.setFocusableInTouchMode(true);
+                    inputNote.requestFocus();
                     Toast.makeText(getApplicationContext(), "Invalid Input", Toast.LENGTH_LONG).show();
                 }else {
                     String newNotePercentage = newNote + "," + newPercentage;
@@ -113,12 +110,12 @@ public class MainActivity extends Activity {
                         data set should refresh itself.
                  */
                     arrayAdapter.notifyDataSetChanged();
-                    in_Note.setText("");
-                    in_Percentage.setText("");
+                    inputNote.setText("");
+                    inputPercentage.setText("");
 
-                    in_Note.setFocusableInTouchMode(true);
-                    in_Note.requestFocus();
-                    final_note.setText("");
+                    inputNote.setFocusableInTouchMode(true);
+                    inputNote.requestFocus();
+                    finalNoteView.setText("");
 
                     if (!(note_list.isEmpty())){
                         double noteSum = 0;
@@ -136,13 +133,13 @@ public class MainActivity extends Activity {
                         }
                         double finalNote = noteSum/percentageSum;
                         double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
-                        final_note.setText(Double.toString(finalNoteRound));
+                        finalNoteView.setText(Double.toString(finalNoteRound));
                         if (finalNoteRound >= 6){
                             Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
-                            final_note.setTextColor(Color.parseColor("#00FF00"));
+                            finalNoteView.setTextColor(Color.parseColor("#00FF00"));
                         }else if (finalNoteRound < 6){
                             Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
-                            final_note.setTextColor(Color.parseColor("#FF0000"));
+                            finalNoteView.setTextColor(Color.parseColor("#FF0000"));
                         }
 
                     }
@@ -152,10 +149,10 @@ public class MainActivity extends Activity {
             }
         });
 
-        removeFile.setOnClickListener(new View.OnClickListener() {
+        removeFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final_note.setText("");
+                finalNoteView.setText("");
                 final List<String> fileList= new ArrayList<String>();
                 String path = getApplicationContext().getFilesDir().toString();
                 File directory = new File(path);
@@ -215,26 +212,26 @@ public class MainActivity extends Activity {
                     }
                     double finalNote = noteSum / percentageSum;
                     double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
-                    final_note.setText(Double.toString(finalNoteRound));
+                    finalNoteView.setText(Double.toString(finalNoteRound));
                     if (finalNoteRound >= 6) {
                         Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
-                        final_note.setTextColor(Color.parseColor("#00FF00"));
+                        finalNoteView.setTextColor(Color.parseColor("#00FF00"));
                     } else if (finalNoteRound < 6) {
                         Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
-                        final_note.setTextColor(Color.parseColor("#FF0000"));
+                        finalNoteView.setTextColor(Color.parseColor("#FF0000"));
                     }
                 }
                 if (note_list.isEmpty()){
-                    final_note.setText("");
+                    finalNoteView.setText("");
                 }
             }
 
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        saveFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final_note.setText("");
+                finalNoteView.setText("");
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Title");
@@ -297,7 +294,7 @@ public class MainActivity extends Activity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final_note.setText("");
+                finalNoteView.setText("");
                 final List<String> fileList= new ArrayList<String>();
                 String path = getApplicationContext().getFilesDir().toString();
                 File directory = new File(path);
