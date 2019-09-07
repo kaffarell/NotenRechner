@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.method.DigitsKeyListener;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -64,10 +65,11 @@ public class MainActivity extends Activity {
             negNotification();
         }
 
-        //TODO: set comma for 6/7 as 6.5
         //set number keyboard
         inputNote.setInputType(InputType.TYPE_CLASS_NUMBER);
         inputPercentage.setInputType(InputType.TYPE_CLASS_NUMBER);
+        inputNote.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
+        inputPercentage.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
 
         //TODO: move buttons up, this is not working
         //set move file button and input when keyboard is out
@@ -118,21 +120,7 @@ public class MainActivity extends Activity {
                     finalNoteView.setText("");
 
                     if (!(note_list.isEmpty())){
-                        double noteSum = 0;
-                        double percentageSum = 0;
-                        for (int i = 0; i < note_list.size(); i++){
-                            String str = note_list.get(i);
-                            String[] str1 = str.split(",", 2);
-                            double newNote1;
-                            int newPercentage1;
-                            newNote1 = Double.parseDouble(str1[0]);
-                            newPercentage1 = Integer.parseInt((str1[1]));
-
-                            noteSum = noteSum + (newNote1 * newPercentage1);
-                            percentageSum += newPercentage1;
-                        }
-                        double finalNote = noteSum/percentageSum;
-                        double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+                        double finalNoteRound = calculate(note_list);
                         finalNoteView.setText(Double.toString(finalNoteRound));
                         if (finalNoteRound >= 6){
                             Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
@@ -197,21 +185,7 @@ public class MainActivity extends Activity {
                 note_list.remove(i); // remove item at index in list datasource
                 arrayAdapter.notifyDataSetChanged(); // call it for refresh ListView
                 if (!(note_list.isEmpty())) {
-                    double noteSum = 0;
-                    double percentageSum = 0;
-                    for (int a = 0; a < note_list.size(); a++) {
-                        String str = note_list.get(a);
-                        String[] str1 = str.split(",", 2);
-                        double newNote1;
-                        int newPercentage1;
-                        newNote1 = Double.parseDouble(str1[0]);
-                        newPercentage1 = Integer.parseInt((str1[1]));
-
-                        noteSum = noteSum + (newNote1 * newPercentage1);
-                        percentageSum += newPercentage1;
-                    }
-                    double finalNote = noteSum / percentageSum;
-                    double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+                    double finalNoteRound = calculate(note_list);
                     finalNoteView.setText(Double.toString(finalNoteRound));
                     if (finalNoteRound >= 6) {
                         Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
@@ -340,6 +314,7 @@ public class MainActivity extends Activity {
                 // create and show the alert dialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                finalNoteView.setText(Double.toString(calculate(note_list)));
 
 
             }
@@ -380,21 +355,7 @@ public class MainActivity extends Activity {
             catch (IOException e) {
                 //You'll need to add proper error handling here
             }
-            double noteSum = 0;
-            double percentageSum = 0;
-            for (int a = 0; a < markList.size(); a++){
-                String str = markList.get(a);
-                String[] str1 = str.split(",", 2);
-                double newNote;
-                int newPercentage;
-                newNote= Double.parseDouble(str1[0]);
-                newPercentage= Integer.parseInt((str1[1]));
-
-                noteSum = noteSum + (newNote * newPercentage);
-                percentageSum += newPercentage;
-            }
-            double finalNote = noteSum/percentageSum;
-            double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+            double finalNote = calculate(markList);
             if (finalNote < 6){
                 String str = fileList.get(i).substring(0, fileList.get(i).indexOf("."));
                 negSub.add(str);
@@ -429,6 +390,26 @@ public class MainActivity extends Activity {
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(pi);
         mNotificationManager.notify(Integer.parseInt(index), mBuilder.build());
+    }
+
+    double calculate(List<String> markList){
+        double noteSum = 0;
+        double percentageSum = 0;
+        for (int a = 0; a < markList.size(); a++){
+            String str = markList.get(a);
+            String[] str1 = str.split(",", 2);
+            double newNote;
+            int newPercentage;
+            str1[0] = str1[0].replace(",", ".");
+            newNote= Double.parseDouble(str1[0]);
+            newPercentage= Integer.parseInt((str1[1]));
+
+            noteSum = noteSum + (newNote * newPercentage);
+            percentageSum += newPercentage;
+        }
+        double finalNote = noteSum/percentageSum;
+        double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
+        return finalNoteRound;
     }
 
 }

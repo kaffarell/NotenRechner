@@ -20,16 +20,16 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/layout/notification_template_part_time.xml"
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -56,12 +56,12 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_light.xml.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/color/abc_primary_text_material_light.xml"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable/tooltip_frame_light.xml"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_light.xml.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
@@ -84,12 +84,12 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/layout/abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -232,12 +232,12 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -324,16 +324,16 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/anim/abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/layout/notification_template_icon_group.xml"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -396,12 +396,12 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_small_material.xml.flat",
@@ -496,12 +496,12 @@
         "source": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/layout-v16/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/72b2b92ec4ab73ff21fb9bc348de3b22/core-1.0.1/res/layout-v16/notification_template_custom_big.xml"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -588,6 +588,10 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout-large_activity_main.xml.flat",
+        "source": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/res/layout-large/activity_main.xml"
+    },
+    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -612,12 +616,12 @@
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_abc_search_dropdown_item_icons_2line.xml.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -1430,6 +1434,10 @@
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
         "source": "/home/gabriel/.gradle/caches/transforms-2/files-2.1/f6a183f8595ca34f3d5cc99d1f8bc322/appcompat-1.0.2/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/layout-h146dp_activity_main.xml.flat",
+        "source": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/res/layout-h146dp/activity_main.xml"
     },
     {
         "merged": "/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/res/merged/debug/drawable_abc_text_cursor_material.xml.flat",
