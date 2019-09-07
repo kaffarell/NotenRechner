@@ -25,25 +25,24 @@
 17-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
 18-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme"
-20-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:12:9-40
-21        android:windowSoftInputMode="adjustResize" >
-21-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:11:9-51
-22        <activity android:name="com.example.notenrechner.MainActivity" >
-22-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:9-19:20
-22-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-47
-23            <intent-filter>
-23-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:13-18:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:17-69
-24-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:17-77
-26-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:27-74
-27            </intent-filter>
-28        </activity>
-29    </application>
-30
-31</manifest>
+19        android:theme="@style/AppTheme"
+19-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:12:9-40
+20        android:windowSoftInputMode="adjustResize" >
+20-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:11:9-51
+21        <activity android:name="com.example.notenrechner.MainActivity" >
+21-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:9-19:20
+21-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-47
+22            <intent-filter>
+22-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:13-18:29
+23                <action android:name="android.intent.action.MAIN" />
+23-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:17-69
+23-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:25-66
+24
+25                <category android:name="android.intent.category.LAUNCHER" />
+25-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:17-77
+25-->/home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:27-74
+26            </intent-filter>
+27        </activity>
+28    </application>
+29
+30</manifest>

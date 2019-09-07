@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
 
         //TODO: move buttons up, this is not working
         //set move file button and input when keyboard is out
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         // Create a List from String Array elements
         final List<String> note_list = new ArrayList<String>();
