@@ -35,7 +35,7 @@ INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/Andr
 INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-22:12
 INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-22:12
 	package
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:3:5-39
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -72,10 +72,10 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gabri
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:12:9-40
-activity#com.example.notenrechner.MainActivity
+activity#com.primal.notenrechner.MainActivity
 ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-47
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN

@@ -1,4 +1,4 @@
-package com.example.notenrechner;
+package com.primal.notenrechner;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -56,7 +56,6 @@ public class MainActivity extends Activity {
         final TextView finalNoteView = (TextView)findViewById((R.id.textView6));
         final Button saveFileButton = (Button)findViewById(R.id.button);
         final Button removeFileButton = (Button)findViewById(R.id.button5);
-
         final Button loadButton = (Button)findViewById(R.id.button2);
         inputPercentage.setText("");
         inputNote.setText("");
@@ -136,6 +135,8 @@ public class MainActivity extends Activity {
 
             }
         });
+
+
 
         removeFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
