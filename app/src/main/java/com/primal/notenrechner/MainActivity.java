@@ -26,6 +26,12 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -48,6 +54,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 
+
+
         // Get reference of widgets from XML layout
         final ListView lv = (ListView) findViewById(R.id.lv);
         final Button addMarkButton = (Button) findViewById(R.id.btn);
@@ -57,8 +65,18 @@ public class MainActivity extends Activity {
         final Button saveFileButton = (Button)findViewById(R.id.button);
         final Button removeFileButton = (Button)findViewById(R.id.button5);
         final Button loadButton = (Button)findViewById(R.id.button2);
+        final AdView mAdView = (AdView)findViewById(R.id.adView);
         inputPercentage.setText("");
         inputNote.setText("");
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             negNotification();
