@@ -1,0 +1,4 @@
+#Thu Sep 12 15:43:43 CEST 2019
+base.0=/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

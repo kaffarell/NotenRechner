@@ -69,12 +69,13 @@ public class MainActivity extends Activity {
         inputPercentage.setText("");
         inputNote.setText("");
 
+
+        //request and initialize ad banner
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -88,7 +89,7 @@ public class MainActivity extends Activity {
         inputNote.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
         inputPercentage.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
 
-        //TODO: move buttons up, this is not working
+
         //set move file button and input when keyboard is out
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
@@ -140,10 +141,8 @@ public class MainActivity extends Activity {
                         double finalNoteRound = calculate(note_list);
                         finalNoteView.setText(Double.toString(finalNoteRound));
                         if (finalNoteRound >= 6){
-                            Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
                             finalNoteView.setTextColor(Color.parseColor("#00FF00"));
                         }else if (finalNoteRound < 6){
-                            Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
                             finalNoteView.setTextColor(Color.parseColor("#FF0000"));
                         }
 
@@ -159,13 +158,14 @@ public class MainActivity extends Activity {
         removeFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finalNoteView.setText("");
                 final List<String> fileList= new ArrayList<String>();
+                final List<String> displayList = new ArrayList<>();
                 String path = getApplicationContext().getFilesDir().toString();
                 File directory = new File(path);
                 File[] files = directory.listFiles();
                 for (int i = 0; i < files.length; i++)
                 {
+                    displayList.add(files[i].getName().split("\\.")[0]);
                     fileList.add(files[i].getName());
                 }
 
@@ -174,14 +174,15 @@ public class MainActivity extends Activity {
                 builder.setTitle("Ein Fach auswählen");
 
                 // add a list
-                final String[] item = fileList.toArray(new String[fileList.size()]);
+                final String[] item = displayList.toArray(new String[displayList.size()]);
                 builder.setItems(item, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         note_list.clear();
+                        finalNoteView.setText("");
                         arrayAdapter.notifyDataSetChanged();
                         File dir = getFilesDir();
-                        File file = new File(getApplicationContext().getFilesDir(), item[which]);
+                        File file = new File(getApplicationContext().getFilesDir(), fileList.get(which));
                         boolean deleted = file.delete();
                         if (deleted == true){
                             Toast.makeText(getApplicationContext(), "Fach gelöscht", Toast.LENGTH_LONG).show();
@@ -207,10 +208,8 @@ public class MainActivity extends Activity {
                     double finalNoteRound = calculate(note_list);
                     finalNoteView.setText(Double.toString(finalNoteRound));
                     if (finalNoteRound >= 6) {
-                        Toast.makeText(getApplicationContext(), "Yay!!", Toast.LENGTH_LONG).show();
                         finalNoteView.setTextColor(Color.parseColor("#00FF00"));
                     } else if (finalNoteRound < 6) {
-                        Toast.makeText(getApplicationContext(), "R.I.P", Toast.LENGTH_LONG).show();
                         finalNoteView.setTextColor(Color.parseColor("#FF0000"));
                     }
                 }
@@ -224,8 +223,6 @@ public class MainActivity extends Activity {
         saveFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finalNoteView.setText("");
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Title");
 
@@ -287,13 +284,14 @@ public class MainActivity extends Activity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finalNoteView.setText("");
                 final List<String> fileList= new ArrayList<String>();
+                final List<String> displayList = new ArrayList<>();
                 String path = getApplicationContext().getFilesDir().toString();
                 File directory = new File(path);
                 File[] files = directory.listFiles();
                 for (int i = 0; i < files.length; i++)
                 {
+                    displayList.add(files[i].getName().split("\\.")[0]);
                     fileList.add(files[i].getName());
                 }
 
@@ -302,12 +300,12 @@ public class MainActivity extends Activity {
                 builder.setTitle("Ein Fach auswählen");
 
                 // add a list
-                final String[] item = fileList.toArray(new String[fileList.size()]);
+                final String[] item = displayList.toArray(new String[displayList.size()]);
                 builder.setItems(item, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //Get the text file
-                        File file = new File(getApplicationContext().getFilesDir(), item[which]);
+                        File file = new File(getApplicationContext().getFilesDir(), fileList.get(which));
                         //Read text from file
                         note_list.clear();
                         arrayAdapter.notifyDataSetChanged();
@@ -325,6 +323,13 @@ public class MainActivity extends Activity {
                         catch (IOException e) {
                             //You'll need to add proper error handling here
                         }
+                        double finalNote = calculate(note_list);
+                        finalNoteView.setText(Double.toString(calculate(note_list)));
+                        if (finalNote >= 6){
+                            finalNoteView.setTextColor(Color.parseColor("#00FF00"));
+                        }else if (finalNote < 6){
+                            finalNoteView.setTextColor(Color.parseColor("#FF0000"));
+                        }
 
                     }
                 });
@@ -333,7 +338,6 @@ public class MainActivity extends Activity {
                 // create and show the alert dialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
-                finalNoteView.setText(Double.toString(calculate(note_list)));
 
 
             }
