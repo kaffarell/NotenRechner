@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.material:material:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/c47b10356d1569b16033bcf84f77df77/material-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f1943a595476b17a7f2564e38527a473/appcompat-1.0.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/gabriel/.gradle/caches/transforms-2/files-2.1/697f91996ebe6906a8d955f3705b49b5/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-ads:18.2.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/b303c9151ce9049547e1d1a13b7fef02/jetified-play-services-ads-18.2.0/AndroidManifest.xml:17:1-25:12
@@ -19,10 +20,12 @@ MERGED from [com.google.android.gms:play-services-stats:17.0.0] /home/gabriel/.g
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/6c9475775be2dd0cbf091bc8ed4d1cdb/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/3b023e7f347cacefe5a076709eb0ec4e/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/536f5ae982e07c984c79656fc4282f2e/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/87a00764e5a343a062fad43cb2036196/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.browser:browser:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/438b372b680e9e1d5c31cc58ad540b78/browser-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/a447660f50e2ef31c3378aec09976c35/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/2b06e1fbec1618595d0dc9610e3549e3/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gabriel/.gradle/caches/transforms-2/files-2.1/b4ad7536dd74fbaf266c258823e4e292/vectordrawable-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/2f0e6507f125a420993e31a4581d85a4/transition-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/64a16ac68c5a750cbd0d4f57bd33980c/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/bff8db934250ef0ed9d3f722bed5eb85/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/e897107b2cea1cdedf528aa23ab68d89/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -34,6 +37,7 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/gabri
 MERGED from [androidx.core:core:1.0.1] /home/gabriel/.gradle/caches/transforms-2/files-2.1/86a4621a517323ce3eaca5ebe601846d/core-1.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/eebfda1a7256b234b692fa6b9fc327c0/versionedparcelable-1.0.0/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/506066371d9b777fa1bd0a4bf4eb3d6a/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f55aad2c6f815ed54ef5f4a348b91ece/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/ed8dc59fca0a7c39c104728ef90da166/lifecycle-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/67c73d2dfc55eb8a47882e83854767ca/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/89d362dc19db859e96e3b923a048aff4/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -44,25 +48,27 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/gabriel/.gradle/
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/92b8b34523c8298c46fdf122ba5810b8/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/1625fb3364f573a0f76ff60d09a3f47a/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads-base:18.2.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/55817d5fd1dee5600a05fd2c7aa6393c/play-services-ads-base-18.2.0/AndroidManifest.xml:2:1-9:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-28:12
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:1-26:12
 		INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:5:5-26:19
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.google.android.material:material:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/c47b10356d1569b16033bcf84f77df77/material-1.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/c47b10356d1569b16033bcf84f77df77/material-1.0.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/gabriel/.gradle/caches/transforms-2/files-2.1/697f91996ebe6906a8d955f3705b49b5/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/gabriel/.gradle/caches/transforms-2/files-2.1/697f91996ebe6906a8d955f3705b49b5/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:18.2.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/4e01d0fd550def7df732d9c4b9ceab32/play-services-ads-lite-18.2.0/AndroidManifest.xml:26:5-40:19
@@ -98,7 +104,7 @@ MERGED from [com.google.android.gms:play-services-ads-base:18.2.0] /home/gabriel
 	android:label
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:8:9-41
 	android:windowSoftInputMode
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:11:9-51
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:12:9-51
 	android:roundIcon
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:9:9-54
 	android:icon
@@ -106,31 +112,37 @@ MERGED from [com.google.android.gms:play-services-ads-base:18.2.0] /home/gabriel
 	android:allowBackup
 		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:12:9-40
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.primal.notenrechner.LoadActivity
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:9-59
+	android:name
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-47
 activity#com.primal.notenrechner.MainActivity
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:9-19:20
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:13:19-70
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:14:13-18:29
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:17-69
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:17-77
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:17:27-74
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:18:27-74
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:22:9-24:69
+ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:21:9-23:70
 	android:value
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:24:13-67
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:23:13-67
 	android:name
-		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:23:13-69
+		ADDED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml:22:13-69
 uses-sdk
 INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
 INJECTED from /home/gabriel/AndroidStudioProjects/NotenRechner/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/c47b10356d1569b16033bcf84f77df77/material-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/c47b10356d1569b16033bcf84f77df77/material-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f1943a595476b17a7f2564e38527a473/appcompat-1.0.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f1943a595476b17a7f2564e38527a473/appcompat-1.0.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/gabriel/.gradle/caches/transforms-2/files-2.1/697f91996ebe6906a8d955f3705b49b5/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
@@ -161,6 +173,8 @@ MERGED from [androidx.fragment:fragment:1.0.0] /home/gabriel/.gradle/caches/tran
 MERGED from [androidx.fragment:fragment:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/3b023e7f347cacefe5a076709eb0ec4e/fragment-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/536f5ae982e07c984c79656fc4282f2e/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/536f5ae982e07c984c79656fc4282f2e/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/87a00764e5a343a062fad43cb2036196/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/87a00764e5a343a062fad43cb2036196/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.browser:browser:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/438b372b680e9e1d5c31cc58ad540b78/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.browser:browser:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/438b372b680e9e1d5c31cc58ad540b78/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/a447660f50e2ef31c3378aec09976c35/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
@@ -169,6 +183,8 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gabriel/.gra
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/2b06e1fbec1618595d0dc9610e3549e3/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gabriel/.gradle/caches/transforms-2/files-2.1/b4ad7536dd74fbaf266c258823e4e292/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/gabriel/.gradle/caches/transforms-2/files-2.1/b4ad7536dd74fbaf266c258823e4e292/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/2f0e6507f125a420993e31a4581d85a4/transition-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/2f0e6507f125a420993e31a4581d85a4/transition-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/64a16ac68c5a750cbd0d4f57bd33980c/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/64a16ac68c5a750cbd0d4f57bd33980c/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/bff8db934250ef0ed9d3f722bed5eb85/viewpager-1.0.0/AndroidManifest.xml:20:5-44
@@ -191,6 +207,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gabri
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/eebfda1a7256b234b692fa6b9fc327c0/versionedparcelable-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/506066371d9b777fa1bd0a4bf4eb3d6a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/506066371d9b777fa1bd0a4bf4eb3d6a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f55aad2c6f815ed54ef5f4a348b91ece/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/f55aad2c6f815ed54ef5f4a348b91ece/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/ed8dc59fca0a7c39c104728ef90da166/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/ed8dc59fca0a7c39c104728ef90da166/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /home/gabriel/.gradle/caches/transforms-2/files-2.1/67c73d2dfc55eb8a47882e83854767ca/documentfile-1.0.0/AndroidManifest.xml:20:5-44

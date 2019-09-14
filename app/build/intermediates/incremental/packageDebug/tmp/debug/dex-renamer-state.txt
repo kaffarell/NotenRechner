@@ -1,4 +1,4 @@
-#Fri Sep 13 18:39:14 CEST 2019
+#Sat Sep 14 15:31:18 CEST 2019
 base.0=/home/gabriel/AndroidStudioProjects/NotenRechner/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -46,7 +46,11 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private String m_Text = "";
+    public static String m_Text = "";
+    public static List<String> note_list = new ArrayList<>();
+    public static List<String> fileList= new ArrayList<String>();
+    public static List<String> displayList = new ArrayList<>();
+    public static int selection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,7 @@ public class MainActivity extends Activity {
 
 
         // Get reference of widgets from XML layout
-        final ListView lv = (ListView) findViewById(R.id.lv);
+        final ListView lv = (ListView) findViewById(R.id.listfiles);
         final Button addMarkButton = (Button) findViewById(R.id.btn);
         final EditText inputNote = (EditText)findViewById(R.id.editText2);
         final EditText inputPercentage = (EditText)findViewById(R.id.editText);
@@ -93,8 +97,6 @@ public class MainActivity extends Activity {
         //set move file button and input when keyboard is out
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-        // Create a List from String Array elements
-        final List<String> note_list = new ArrayList<String>();
 
         // Create an ArrayAdapter from List
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
@@ -284,62 +286,18 @@ public class MainActivity extends Activity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final List<String> fileList= new ArrayList<String>();
-                final List<String> displayList = new ArrayList<>();
-                String path = getApplicationContext().getFilesDir().toString();
-                File directory = new File(path);
-                File[] files = directory.listFiles();
-                for (int i = 0; i < files.length; i++)
-                {
-                    displayList.add(files[i].getName().split("\\.")[0]);
-                    fileList.add(files[i].getName());
+                selection = -1;
+                Intent load = new Intent(MainActivity.this, LoadActivity.class);
+                startActivity(load);
+
+                double finalNote = calculate(note_list);
+                finalNoteView.setText(Double.toString(calculate(note_list)));
+                if (finalNote >= 6){
+                    finalNoteView.setTextColor(Color.parseColor("#00FF00"));
+                }else if (finalNote < 6){
+                    finalNoteView.setTextColor(Color.parseColor("#FF0000"));
                 }
-
-                // setup the alert builder
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Ein Fach auswählen");
-
-                // add a list
-                final String[] item = displayList.toArray(new String[displayList.size()]);
-                builder.setItems(item, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Get the text file
-                        File file = new File(getApplicationContext().getFilesDir(), fileList.get(which));
-                        //Read text from file
-                        note_list.clear();
-                        arrayAdapter.notifyDataSetChanged();
-
-
-                        try {
-                            BufferedReader br = new BufferedReader(new FileReader(file));
-                            String line;
-
-                            while ((line = br.readLine()) != null) {
-                                note_list.add(line);
-                            }
-                            br.close();
-                        }
-                        catch (IOException e) {
-                            //You'll need to add proper error handling here
-                        }
-                        double finalNote = calculate(note_list);
-                        finalNoteView.setText(Double.toString(calculate(note_list)));
-                        if (finalNote >= 6){
-                            finalNoteView.setTextColor(Color.parseColor("#00FF00"));
-                        }else if (finalNote < 6){
-                            finalNoteView.setTextColor(Color.parseColor("#FF0000"));
-                        }
-
-                    }
-                });
-
-
-                // create and show the alert dialog
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
-
+                arrayAdapter.notifyDataSetChanged();
             }
         });
 
