@@ -32,6 +32,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
+import java.awt.font.NumericShaper;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -113,7 +114,8 @@ public class MainActivity extends Activity {
                 if (newPercentage.matches("")){
                     newPercentage = "100";
                 }
-                if (newNote.matches("") || Double.parseDouble(newNote) < 3 || Double.parseDouble(newNote) > 10 || Double.parseDouble(newPercentage) > 100 || Double.parseDouble(newPercentage) <= 0){
+                // Check if input is valid
+                if (isGradeValid(newNote) == false || isPercentageValid(newPercentage) == false){
                     inputNote.setText("");
                     inputPercentage.setText("");
                     inputNote.setFocusableInTouchMode(true);
@@ -289,8 +291,7 @@ public class MainActivity extends Activity {
                 String path = getApplicationContext().getFilesDir().toString();
                 File directory = new File(path);
                 File[] files = directory.listFiles();
-                for (int i = 0; i < files.length; i++)
-                {
+                for (int i = 0; i < files.length; i++) {
                     displayList.add(files[i].getName().split("\\.")[0]);
                     fileList.add(files[i].getName());
                 }
@@ -354,8 +355,7 @@ public class MainActivity extends Activity {
         String path = getApplicationContext().getFilesDir().toString();
         File directory = new File(path);
         File[] files = directory.listFiles();
-        for (int i = 0; i < files.length; i++)
-        {
+        for (int i = 0; i < files.length; i++) {
             fileList.add(files[i].getName());
         }
 
@@ -433,6 +433,43 @@ public class MainActivity extends Activity {
         double finalNote = noteSum/percentageSum;
         double finalNoteRound = Math.round(finalNote * 100.0) / 100.0;
         return finalNoteRound;
+    }
+
+    /**
+     * Check if grade is valid
+     * @param grade
+     * @return boolean if valid
+     */
+    public boolean isGradeValid(String grade){
+        double d = 0.0;
+        try{
+            d = Double.valueOf(grade);
+        }catch (NumberFormatException e) {
+            return false;
+        }
+        if(d < 2.0 || d > 11.0) {
+            return false;
+        }
+        return true;
+
+    }
+
+    /**
+     * Check if percentage is valid
+     * @param percentage
+     * @return boolean if valid
+     */
+    public boolean isPercentageValid(String percentage){
+        int i = 0;
+        try{
+            i = Integer.valueOf(percentage);
+        }catch (NumberFormatException e) {
+            return false;
+        }
+        if(i < 0 || i > 100) {
+            return false;
+        }
+        return true;
     }
 
 }
